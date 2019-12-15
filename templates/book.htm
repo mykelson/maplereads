@@ -1,0 +1,58 @@
+<!DOCTYPE html> {% extends "layout.htm" %} {% block title %} {{ book.title }} {% endblock %} {% block body %}
+<section>
+    <div>
+        <h2>{{ book.title }}</h2>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-6">Author: {{ book.author }}</div>
+        <div class="col-6">Publication Year: {{ book.year }}</div>
+    </div>
+    <div class="row">
+        <div class="col-6">ISBN Number: {{ book.isbn }}</div>
+        <div class="col-6">Ratings: {{ average_rating }}</div>
+    </div>
+    <hr>
+    <div>
+        {% for review in reviews %}
+        <div>
+            <span>{{ review.username }}</span>
+            <p>{{ review.opinion }}</p>
+            <p>Rating: {{ review.rating }}</p>
+        </div>
+        {% else %}
+        <h4>NO reviews yet...</h4>
+        {% endfor %}
+    </div>
+    <hr>
+    <div>
+        <h3>Goodreads Review</h3>
+        <hr>
+        <div class="row">
+            <div class="col-6">Average Rating: {{ goodreads_average_rating }}</div>
+            <div class="col-6">Total Reviews: {{ goodreads_total_ratings }}</div>
+        </div>
+    </div>
+    <hr>
+    <div>
+        <form action="{{ url_for('book_review', isbn=book.isbn) }}" method="POST">
+            <div class="form-group">
+                <input type="text" class="form-control" autocomplete="off" placeholder="Drop your reviews here..." name="opinion">
+            </div>
+            <div class="form=group">
+                <select name="rate">
+                    <option value="" disabled>Rate</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock %}

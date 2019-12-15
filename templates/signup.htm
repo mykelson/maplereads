@@ -1,0 +1,33 @@
+{% extends "layout0.htm" %} {% block title %} Sign up {% endblock %} {% block head %}
+
+<style>
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+    }
+    
+    @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+        }
+    }
+</style>
+
+<!-- Custom styles for this template -->
+<link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='css/signin.css') }}" /> {% endblock %} {% block body %}
+
+<form class="form-signin" action="{{ url_for('register') }}" method="post">
+    <img class="mb-4" src="{{ url_for('static', filename='img/book0.jpg') }}" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">Please sign up</h1>
+    <label for="inputEmail" class="sr-only">Full name</label>
+    <input class="form-control" autocomplete="off" autofocus type="text" name="name" placeholder="Full name">
+    <label for="inputEmail" class="sr-only">Username</label>
+    <input type="text" id="inputUsername" name="username" class="form-control" placeholder="Username" required>
+    <label for="inputEmail" class="sr-only">Email address</label>
+    <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required>
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+</form>
+
+{% endblock %}

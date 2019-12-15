@@ -1,0 +1,53 @@
+{% extends "layout.htm" %} {% block title %} Search results {% endblock %} {% block body %} {% block head %}
+<style>
+    table {
+        border: 1px solid white;
+        border-collapse: collapse;
+        width: 100%;
+    }
+    
+    th,
+    td {
+        border: 1px solid white;
+        padding: 5px;
+        text-align: center;
+    }
+    
+    th {
+        background-color: rgb(37, 94, 168);
+    }
+    
+    td {
+        background-color: white;
+    }
+</style>
+{% endblock %}
+
+
+<header>
+    <h1 style="text-align:center; margin:24px;">Your Search Results. </h1>
+</header>
+<section>
+    <div style="margin:70px">
+        <table>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>ISBN</th>
+                <th>Year</th>
+            </tr>
+            {% for result in results %}
+            <tr>
+                <td>{{ result.title }}</td>
+                <td>{{ result.author }}</td>
+                <td>{{ result.isbn }}</td>
+                <td>{{ result.year }}</td>
+            </tr>
+            {% else %}
+            <h4 style="text-align:center">No result found.</h4>
+            {% endfor %}
+        </table>
+    </div>
+</section>
+
+{% endblock %}

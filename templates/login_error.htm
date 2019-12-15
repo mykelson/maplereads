@@ -1,0 +1,7 @@
+{% extends "layout.htm" %} {% block title %}Error{% endblock %} {% block body %}
+<h4 style="margin:240px; text-align:center;">Error: {{ message }}</h4>
+<div style="margin:150px; ">
+    <a href="{{ url_for('sign_up', value=1) }}"><button class="btn btn-primary align-self-center mr-3">Log in</button></a>
+    <a href="{{ url_for('sign_up', value=2) }}"><button class="btn btn-primary align-self-center mr-3">Sign up</button></a>
+</div>
+{% endblock %}

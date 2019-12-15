@@ -1,0 +1,18 @@
+{% extends "layout.htm" %} {% block title %} Project 1 {% endblock %} {% block body %}
+<header>
+    <div>
+        <h1 class="heading">Project 1: Books</h1>
+        <span><a href="{{ url_for('sign_up', value=1) }}"><button class="btn" style="float:right;">Log in</button></a></span>
+        <span><a href="{{ url_for('sign_up', value=2) }}"><button class="btn" style="float:right;">Sign up</button></a></span>
+    </div>
+</header>
+
+<section>
+    <h2 style="margin: 200px; text-align:center">Connect with books that intrigies you, and join a community of books loving readers like yourself</h2>
+
+    <div style="margin:250px; ">
+        <a href="{{ url_for('sign_up', value=1) }}"><button class="btn">Log in</button></a>
+        <a href="{{ url_for('sign_up', value=2) }}"><button class="btn">Sign up</button></a>
+    </div>
+</section>
+{% endblock %}

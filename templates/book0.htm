@@ -1,0 +1,70 @@
+<!DOCTYPE html> {% extends "layout.htm" %} {% block title %} {{ book.title }} {% endblock %} {% block body %}
+
+<section>
+    <div class="container book">
+        <div class="row">
+            <img src="{{ image }}" class="col-4" alt="{{ book.title }}">
+            <div class="col-8 book-details">
+                <div class="book-title">
+                    {{ book.title }}
+                </div>
+                <div class="book-author">
+                    {{ book.author }}</div>
+                <div class="book-des">
+                    {{ book_description }}
+                </div>
+
+            </div>
+        </div>
+
+        <div>
+            <p>
+                Published in {{ book.year }} by {{ publisher }}
+            </p>
+        </div>
+        <hr>
+        <div>
+            <h4>Rankings on Goodreads</h4>
+
+            <div class="row">
+                <div class="col-6">Average Rating: {{ goodreads_average_rating }}</div>
+                <div class="col-6">Total Reviews: {{ goodreads_total_ratings }}</div>
+            </div>
+        </div>
+        <hr>
+        <div>
+            <form action="{{ url_for('book_review', isbn=book.isbn) }}" method="POST">
+                <div class="form-group">
+                    <input type="text" class="form-control" autocomplete="off" placeholder="Drop your reviews here..." name="opinion">
+                </div>
+                <div class="form=group">
+                    <select name="rate">
+                    <option value="" disabled>Rate</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+        <hr>
+        <div>
+            {% for review in reviews %}
+            <div>
+                <span>{{ review.username }}</span>
+                <p>{{ review.opinion }}</p>
+                <p>Rating: {{ review.rating }}</p>
+            </div>
+            {% else %}
+            <h4>NO reviews yet...</h4>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}

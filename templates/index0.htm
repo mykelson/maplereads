@@ -1,0 +1,74 @@
+<!DOCTYPE html> {% extends "layout.htm" %} {% block title %} Maple Reads {% endblock %} {% block body %}
+
+<section>
+    <div class="container book">
+        <div class="row">
+            <img src="{{ image }}" class="col-4" alt="{{ book.title }}">
+            <div class="col-8 book-details">
+                <div class="book-title">
+                    {{ book.title }}
+                </div>
+                <div class="book-author">
+                    {{ book.author }}</div>
+                <div class="book-des">
+                    {{ book_description }}
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <section style="text-align:center; padding:50px">
+        <h2>Connect with books that intrigue's you, and join a community of books loving readers like yourself</h2>
+
+        <div style="margin-top: 30px;">
+            <a href="{{ url_for('sign_up', value=1) }}"><button class="btn">Log in</button></a>
+            <a href="{{ url_for('sign_up', value=2) }}"><button class="btn">Sign up</button></a>
+        </div>
+    </section>
+    <div class="container">
+        <div class="row ranks">
+            <div class="col-lg-3 col-sm-6 trending">
+                <div class="title1">Trending</div>
+                <div class="title2">Books Reviews</div>
+                <div class="rank-des">
+                    Find out the top books other readers are taking about.
+                </div>
+                <div class="see-books">
+                    See Books...
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 featured">
+                <div class="title1">Featured</div>
+                <div class="title2">Top Picks</div>
+                <div class="rank-des">
+                    Find out the top books other readers are reading and what their opinions on them.
+                </div>
+                <div class="see-books">
+                    See Books...
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 best-sellers">
+                <div class="title1">Best</div>
+                <div class="title2">Sellers</div>
+                <div class="rank-des">
+                    Discover the top authors that are having the highest sales.
+                </div>
+                <div class="see-books">
+                    See Books...
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 this-month">
+                <div class="title1">Books</div>
+                <div class="title2">This Month</div>
+                <div class="rank-des">
+                    Find out the top rated books for this months.
+                </div>
+                <div class="see-books">
+                    See Books...
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+{% endblock %}

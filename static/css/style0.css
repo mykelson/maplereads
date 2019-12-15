@@ -1,0 +1,144 @@
+body {
+  background-color: white;
+}
+
+.body {
+  margin-top: 50px;
+}
+
+.container {
+  margin-left: 60px;
+  margin-right: 60px;
+  padding: 20px;
+  background-color: white;
+}
+
+.logo {
+  font-family: Poppins;
+  font-style: normal;
+  color: black;
+}
+
+.book {
+  background-color: white;
+}
+
+@media (min-width: 750px) {
+  .book-details {
+    font-family: Abel;
+    font-style: normal;
+    align-items: center;
+    color: black;
+  }
+  .book-details .book-title {
+    font-weight: 600;
+    font-size: 32px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .book-details .book-author {
+    text-align: center;
+    font-weight: 200;
+    font-size: 24px;
+  }
+
+  .book img {
+    height: 300px;
+  }
+
+  .book-des {
+    text-align: justify;
+  }
+}
+@media (min-width: 500px) {
+  .book-details {
+    font-family: Poppins;
+    font-style: normal;
+    align-items: center;
+    color: black;
+  }
+  .book-details .book-title {
+    font-weight: 400;
+    font-size: 25px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .book-details .book-author {
+    text-align: center;
+    font-weight: 150;
+    font-size: 16px;
+  }
+
+  .book img {
+    height: 200px;
+  }
+
+  .book-des {
+    text-align: justify;
+  }
+}
+@media (max-width: 499px) {
+  .book-details {
+    font-family: Poppins;
+    font-style: normal;
+    align-items: center;
+    color: black;
+  }
+  .book-details .book-title {
+    font-weight: 300;
+    font-size: 20px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .book-details .book-author {
+    text-align: center;
+    font-weight: 120;
+    font-size: 14px;
+  }
+
+  .book img {
+    height: 100px;
+  }
+
+  .book-des {
+    text-align: justify;
+  }
+}
+.ranks {
+  color: white;
+  height: 250px;
+}
+.ranks .trending {
+  background-color: lightblue;
+}
+.ranks .featured {
+  background-color: lightgreen;
+}
+.ranks .best-sellers {
+  background-color: orange;
+}
+.ranks .this-month {
+  background-color: red;
+}
+.ranks .title1 {
+  font-size: x-large;
+  font-weight: bold;
+}
+.ranks .title2 {
+  font-size: x-large;
+}
+.ranks .rank-des {
+  margin-top: 10px;
+  text-align: justify;
+}
+.ranks .see-books {
+  margin-top: 10px;
+  text-align: bottom;
+  border: 1px solid white;
+}
+
+.card-body {
+  color: black;
+}
+
+/*# sourceMappingURL=style0.css.map */
