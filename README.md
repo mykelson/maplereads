@@ -2,7 +2,8 @@
 
 Web Programming with Python and JavaScript
 
-set DATABASE_URL=postgres://eonnovvbhingoh:3cf40f96881376932ea2d5fee7e583a8e7b117b9073b8b437a66e69c9083433a@ec2-174-129-18-247.compute-1.amazonaws.com:5432/dctbtl2u19d2qp
+set DATABASE_URL=postgres://gdrlyzboleqgcj:332a5ea4c02684e60b938cf12022e6703ecc50a81de4195395fb099c715f5a4b@ec2-174-129-254-249.compute-1.amazonaws.com:5432/d7k75p161er914
+
 
 
 For Goodreads api key:
@@ -22,3 +23,18 @@ CREATE TABLE reviews(
     rating INTEGER NOT NULL,
     opinion VARCHAR NOT NULL
 );
+
+CREATE TABLE books (
+     isbn VARCHAR  PRIMARY KEY,
+    title VARCHAR NOT NULL,
+    author VARCHAR NOT NULL,
+    year INTEGER NOT NULL
+ );
+
+ CREATE TABLE users (
+     id SERIAL PRIMARY KEY,
+     name VARCHAR NOT NULL,
+     username VARCHAR NOT NULL,
+     email VARCHAR NOT NULL,
+     password VARCHAR NOT NULL
+ );
