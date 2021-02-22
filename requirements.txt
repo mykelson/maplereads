@@ -19,7 +19,7 @@ idna==2.8
 itsdangerous==1.1.0
 Jinja2==2.10
 MarkupSafe==1.1.0
-marshmallow==2.9.1
+marshmallow==2.15.1
 pipenv==2018.11.26
 psycopg2==2.7.6.1
 pycparser==2.19
